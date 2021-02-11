@@ -15,7 +15,7 @@ namespace RPSLS
         // Constructor
         public Game()
         {
-            Human playerOne = new Human();
+            playerOne = new Human();
             gesturesList = new List<string> {"Rock","Paper","Scissors","Lizard","Spock"};
         }
 
@@ -81,7 +81,19 @@ namespace RPSLS
             string playerOneChoice, playerTwoChoice;
             playerOneChoice = player1.ChooseGesture(gesturesList);
             playerTwoChoice = player2.ChooseGesture(gesturesList);
-        }
 
+           
+        }
+        public void CompareGestures(string player1Gesture, string player2Gesture)
+        {
+            if (player1Gesture == player2Gesture)
+            {
+                Console.WriteLine("Both tied!");
+            }
+            else if(player1Gesture == "Rock")
+            {
+
+            }
+        }
     }
 }
