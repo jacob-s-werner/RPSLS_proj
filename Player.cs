@@ -10,12 +10,13 @@ namespace RPSLS
     {
         // Member Variables (HAS a)
         public string name;
-
+        public int score;
         // Constructor
 
         public Player()
         {
             name = null;
+            score = 0;
         }
         // Member Methods(CAN do)
         public virtual string ChooseGesture(List<string> gesturesList)
@@ -26,7 +27,7 @@ namespace RPSLS
 
             while (keepRunning)
             {
-                Console.WriteLine($"{name} - Type which gesture to play out of the following options:");
+                Console.WriteLine($"{name} - Type which gesture to play from the following options:");
 
                 for (int i = 0; i < gesturesList.Count; i++)
                 {

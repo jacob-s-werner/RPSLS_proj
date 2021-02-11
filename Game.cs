@@ -10,14 +10,13 @@ namespace RPSLS
     {
         // Member Variables (HAS a)
         Human playerOne;
-        
+        List<string> gesturesList;
 
         // Constructor
         public Game()
         {
             Human playerOne = new Human();
-            
-
+            gesturesList = new List<string> {"Rock","Paper","Scissors","Lizard","Spock"};
         }
 
         // Member Methods(CAN do)
@@ -61,7 +60,9 @@ namespace RPSLS
         {
             Human playerTwo = new Human();
             bool keepRunning = true;
-            Console.WriteLine("Player vs. Player Mode");
+            int roundNumber;
+
+            Console.WriteLine("----------Player vs. Player Mode----------");
             Console.WriteLine("Player One:");
             playerOne.SetName();
             Console.WriteLine("Player Two:");
@@ -69,11 +70,17 @@ namespace RPSLS
 
             while (keepRunning)
             {
-
+                
             }
 
 
 
+        }
+        public void BattleRound(Player player1, Player player2)
+        {
+            string playerOneChoice, playerTwoChoice;
+            playerOneChoice = player1.ChooseGesture(gesturesList);
+            playerTwoChoice = player2.ChooseGesture(gesturesList);
         }
 
     }
