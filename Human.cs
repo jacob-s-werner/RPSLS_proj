@@ -8,5 +8,17 @@ namespace RPSLS
 {
     public class Human : Player
     {
+        // Member Variables (HAS a)
+
+
+        // Constructor
+        public Human()
+        {
+
+        }
+        
+        // Member Methods(CAN do)
+
+
     }
 }

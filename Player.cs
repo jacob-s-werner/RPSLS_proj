@@ -8,5 +8,17 @@ namespace RPSLS
 {
     public class Player
     {
+        // Member Variables (HAS a)
+
+
+        // Constructor
+
+        public Player()
+        {
+
+        }
+        // Member Methods(CAN do)
+
+
     }
 }

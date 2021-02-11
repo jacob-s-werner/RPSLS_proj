@@ -8,5 +8,17 @@ namespace RPSLS
 {
     public class AI : Player
     {
+        // Member Variables (HAS a)
+
+
+        // Constructor
+        public AI()
+        {
+
+        }
+
+        // Member Methods(CAN do)
+
+
     }
 }
