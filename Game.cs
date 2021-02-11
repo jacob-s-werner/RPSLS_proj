@@ -9,11 +9,14 @@ namespace RPSLS
     class Game
     {
         // Member Variables (HAS a)
-
+        Human playerOne;
+        
 
         // Constructor
         public Game()
         {
+            Human playerOne = new Human();
+            
 
         }
 
@@ -33,16 +36,16 @@ namespace RPSLS
                     "Paper disproves Spock \n Spock vaporizes Rock \n");
 
                 Console.WriteLine("Enter the number for which game mode you want to play:");
-                Console.WriteLine("1: Player vs. AI \n2: Player vs. Player \n0: Exit Game");
+                Console.WriteLine("1: Player vs. AI \n2: Player vs. Player \n0: Exit Game \n");
                 userInput = Console.ReadLine();
 
                 if (userInput == "1")
                 {
-                    
+                    Console.WriteLine("Player vs. AI");
                 }
                 else if(userInput == "2")
                 {
-
+                    PlayerVsPlayer();
                 }
                 else if (userInput == "0")
                 {
@@ -52,10 +55,22 @@ namespace RPSLS
                 {
                     Console.WriteLine("Invalid option,try again\n");
                 }
+            }
+        }
+        public void PlayerVsPlayer()
+        {
+            Human playerTwo = new Human();
+            bool keepRunning = true;
+            Console.WriteLine("Player vs. Player Mode");
+            Console.WriteLine("Player One:");
+            playerOne.SetName();
+            Console.WriteLine("Player Two:");
+            playerTwo.SetName();
+
+            while (keepRunning)
+            {
 
             }
-            
-
 
 
 

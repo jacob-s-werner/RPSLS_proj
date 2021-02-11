@@ -18,7 +18,11 @@ namespace RPSLS
         }
         
         // Member Methods(CAN do)
-
+        public void SetName()
+        {
+            Console.Write("Enter your name:");
+            name = Console.ReadLine();
+        }
 
     }
 }
