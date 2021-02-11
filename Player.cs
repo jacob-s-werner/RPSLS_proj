@@ -9,16 +9,19 @@ namespace RPSLS
     public class Player
     {
         // Member Variables (HAS a)
-
+        public string name;
 
         // Constructor
 
         public Player()
         {
-
+         
         }
         // Member Methods(CAN do)
+        public virtual void ChooseGesture()
+        {
 
+        }
 
     }
 }
