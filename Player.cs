@@ -34,6 +34,8 @@ namespace RPSLS
                     Console.WriteLine(gesturesList[i]);
                 }
                 gestureChosen = Console.ReadLine();
+                Console.WriteLine("");
+
                 if (gesturesList.Contains(gestureChosen))
                 {
                     return gestureChosen;

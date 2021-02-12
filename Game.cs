@@ -30,9 +30,9 @@ namespace RPSLS
                 Console.WriteLine("Prepare to play Rock Paper Scissors Lizard Spock!\n");
 
                 Console.WriteLine("It's like Rock Paper Scissors with the following rules:");
-                Console.WriteLine("Rock crushes Scissors \nScissors cuts Paper \n Paper covers Rock \n Rock crushes Lizard" +
+                Console.WriteLine("Rock crushes Scissors \nScissors cuts Paper \nPaper covers Rock \nRock crushes Lizard" +
                     "Lizard poisons Spock \nSpock smashes Scissors \nScissors decapitates Lizard \nLizard eats Paper \n" +
-                    "Paper disproves Spock \n Spock vaporizes Rock \n");
+                    "Paper disproves Spock \nSpock vaporizes Rock \n");
 
                 Console.WriteLine("Enter the number for which game mode you want to play:");
                 Console.WriteLine("1: Player vs. AI \n2: Player vs. Player \n0: Exit Game \n");
@@ -85,11 +85,11 @@ namespace RPSLS
 
                 if (playerOne.score > playerTwo.score)
                 {
-                    Console.WriteLine($"\n {playerOne.name} has won the game!");
+                    Console.WriteLine($"\n{playerOne.name} has won the game!");
                 }
                 else
                 {
-                    Console.WriteLine($"\n {playerTwo.name} has won the game!");
+                    Console.WriteLine($"\n{playerTwo.name} has won the game!");
                 }
 
                 Console.WriteLine("Would you like a rematch? Y/N");
@@ -133,11 +133,11 @@ namespace RPSLS
 
                 if (playerOne.score > playerTwo.score)
                 {
-                    Console.WriteLine($"\n {playerOne.name} has won the game!");
+                    Console.WriteLine($"\n{playerOne.name} has won the game!");
                 }
                 else
                 {
-                    Console.WriteLine($"\n {playerTwo.name} has won the game!");
+                    Console.WriteLine($"\n{playerTwo.name} has won the game!");
                 }
 
                 Console.WriteLine("Would you like a rematch? Y/N");
