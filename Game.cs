@@ -73,15 +73,6 @@ namespace RPSLS
                 Console.WriteLine($"Round {roundNumber}:");
                 BattleRound(playerOne, playerTwo);
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 if (roundNumber >= 3 && playerTwo.score != playerOne.score)
                 {
                     break;
@@ -100,7 +91,15 @@ namespace RPSLS
             playerOneChoice = player1.ChooseGesture(gesturesList);
             playerTwoChoice = player2.ChooseGesture(gesturesList);
             winningOption = CompareGestures(playerOneChoice, playerTwoChoice);
-           
+
+            if (winningOption == 1)
+            {
+                player1.score++;
+            }
+            else if (winningOption == 2)
+            {
+                player2.score++;
+            }
         }
         public int CompareGestures(string player1Gesture, string player2Gesture)
         {
