@@ -40,7 +40,7 @@ namespace RPSLS
 
                 if (userInput == "1")
                 {
-                    Console.WriteLine("Player vs. AI");
+                    PlayerVsAI();
                 }
                 else if(userInput == "2")
                 {
@@ -55,6 +55,52 @@ namespace RPSLS
                     Console.WriteLine("Invalid option,try again\n");
                 }
             }
+        }
+        public void PlayerVsAI()
+        {
+            AI playerTwo = new AI();
+            bool keepRunning = true;
+            int roundNumber = 0;
+            string userResponse;
+
+            Console.WriteLine("----------Player vs. AI Mode----------");
+            Console.WriteLine("Player One:");
+            playerOne.SetName();
+            Console.WriteLine("");
+
+            while (keepRunning)
+            {
+
+                while (keepRunning)
+                {
+                    Console.WriteLine($"Round {roundNumber}:");
+                    BattleRound(playerOne, playerTwo);
+
+                    if (roundNumber >= 3 && playerTwo.score != playerOne.score)
+                    {
+                        break;
+                    }
+                    roundNumber++;
+                }
+
+                if (playerOne.score > playerTwo.score)
+                {
+                    Console.WriteLine($"\n {playerOne.name} has won the game!");
+                }
+                else
+                {
+                    Console.WriteLine($"\n {playerTwo.name} has won the game!");
+                }
+
+                Console.WriteLine("Would you like a rematch? Y/N");
+                userResponse = Console.ReadLine();
+
+                if (userResponse.ToUpper() != "Y" || userResponse.ToUpper() != "YES")
+                {
+                    keepRunning = false;
+                }
+            }
+
         }
         public void PlayerVsPlayer()
         {
