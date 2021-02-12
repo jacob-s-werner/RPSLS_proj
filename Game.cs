@@ -106,7 +106,7 @@ namespace RPSLS
         }
         public int CompareGestures(string player1Gesture, string player2Gesture)
         {
-            int winningOption;
+            int winningOption = 0;
 
             if (player1Gesture == player2Gesture)
             {
@@ -213,11 +213,10 @@ namespace RPSLS
                 Console.WriteLine("Spock vaporizes Rock");
                 return winningOption = 2;
             }
-            else
-            {
-                Console.WriteLine("Error, invalid Gesture");
-                return winningOption = 0;
-            }
+        
+            Console.WriteLine("Error, invalid Gesture");
+            return winningOption;
+            
         }
         public void RunGameMode(Player playerOne, Player playerTwo)
         {
