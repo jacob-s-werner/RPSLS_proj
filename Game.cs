@@ -156,6 +156,7 @@ namespace RPSLS
             string playerOneChoice, playerTwoChoice;
             
             playerOneChoice = player1.ChooseGesture(gesturesList);
+            Console.Clear();
             playerTwoChoice = player2.ChooseGesture(gesturesList);
             winningOption = CompareGestures(playerOneChoice, playerTwoChoice);
 
