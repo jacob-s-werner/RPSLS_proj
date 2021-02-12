@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Gesture
+    public class Gesture
     {
-        string name;
-        List<Gesture> losesToList;
-        List<Gesture> beatsList;
+        public string name;
+        public List<Gesture> losesToList;
+        public List<Gesture> beatsList;
 
         public Gesture(string name)
         {
