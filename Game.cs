@@ -74,7 +74,7 @@ namespace RPSLS
                 while (keepRunning)
                 {
                     Console.WriteLine($"Round {roundNumber}:");
-                    BattleRound(playerOne, playerTwo);
+                    BattleRound(playerOne, playerTwo, roundNumber);
 
                     if (roundNumber >= 3 && playerTwo.score != playerOne.score)
                     {
