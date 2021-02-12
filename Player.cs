@@ -9,7 +9,7 @@ namespace RPSLS
     public class Player
     {
         // Member Variables (HAS a)
-        public string name;
+        public string name, gestureChoice;
         public int score;
         // Constructor
 

@@ -153,23 +153,22 @@ namespace RPSLS
         public void BattleRound(Player player1, Player player2, int roundNumber)
         {
             int winningOption;
-            string playerOneChoice, playerTwoChoice;
             
-            playerOneChoice = player1.ChooseGesture(gesturesList);
+            player1.gestureChoice = player1.ChooseGesture(gesturesList);
             Console.Clear();
             
             Console.WriteLine($"Round {roundNumber}");
-            playerTwoChoice = player2.ChooseGesture(gesturesList);
-            winningOption = CompareGestures(playerOneChoice, playerTwoChoice);
+            player2.gestureChoice = player2.ChooseGesture(gesturesList);
+            winningOption = CompareGestures(player1.gestureChoice, player2.gestureChoice);
 
             if (winningOption == 1)
             {
-                Console.WriteLine($"{player1.name} has won the round with {playerOneChoice}!\n");
+                Console.WriteLine($"{player1.name} has won the round with {player1.gestureChoice}!\n");
                 player1.score++;
             }
             else if (winningOption == 2)
             {
-                Console.WriteLine($"{player2.name} has won the round with {playerTwoChoice}!\n");
+                Console.WriteLine($"{player2.name} has won the round with {player2.gestureChoice}!\n");
                 player2.score++;
             }
         }
@@ -288,5 +287,9 @@ namespace RPSLS
                 return winningOption = 0;
             }
         }
+        //public void DisplayWinner(Player player)
+        //{
+        //    Console.WriteLine($"{player.name}");
+        //}
     }
 }
