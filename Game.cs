@@ -107,7 +107,7 @@ namespace RPSLS
 
             if (player1Gesture == player2Gesture)
             {
-                Console.WriteLine("Both tied!");
+                Console.WriteLine($"Both tied with {player1Gesture}!");
                 return winningOption = 0;
             }
             else if(player1Gesture == "Rock" && player2Gesture == "Scissors")
