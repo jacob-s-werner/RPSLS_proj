@@ -166,7 +166,7 @@ namespace RPSLS
             }
             else if (winningOption == 2)
             {
-                Console.WriteLine($"{player2.name} has won the round with {playerOneChoice}!\n");
+                Console.WriteLine($"{player2.name} has won the round with {playerTwoChoice}!\n");
                 player2.score++;
             }
         }
