@@ -67,6 +67,7 @@ namespace RPSLS
             playerOne.SetName();
             Console.WriteLine("Player Two:");
             playerTwo.SetName();
+            Console.WriteLine("");
 
             while (keepRunning)
             {
@@ -79,6 +80,18 @@ namespace RPSLS
                 }
                 roundNumber++;
             }
+
+            if (playerOne.score > playerTwo.score)
+            {
+                Console.WriteLine($"\n {playerOne.name} has won the game!");
+            }
+            else
+            {
+                Console.WriteLine($"\n {playerTwo.name} has won the game!");
+            }
+
+
+
         }
         public void BattleRound(Player player1, Player player2)
         {
