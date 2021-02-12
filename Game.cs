@@ -79,9 +79,6 @@ namespace RPSLS
                 }
                 roundNumber++;
             }
-
-
-
         }
         public void BattleRound(Player player1, Player player2)
         {
@@ -94,10 +91,12 @@ namespace RPSLS
 
             if (winningOption == 1)
             {
+                Console.WriteLine($"{player1.name} has won the round with {playerOneChoice}");
                 player1.score++;
             }
             else if (winningOption == 2)
             {
+                Console.WriteLine($"{player2.name} has won the round with {playerOneChoice}");
                 player2.score++;
             }
         }
@@ -215,8 +214,6 @@ namespace RPSLS
                 Console.WriteLine("Error, invalid Gesture");
                 return winningOption = 0;
             }
-
-
         }
     }
 }
