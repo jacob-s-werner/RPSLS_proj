@@ -9,20 +9,15 @@ namespace RPSLS
     class Gesture
     {
         string name;
-        List<Gesture> losesTo;
-        List<Gesture> beats;
+        List<Gesture> losesToList;
+        List<Gesture> beatsList;
 
         public Gesture(string name)
         {
             this.name = name;
 
-            losesTo = new List<Gesture>();
-            beats = new List<Gesture>();
-
+            losesToList = new List<Gesture>();
+            beatsList = new List<Gesture>();
         }
-
-        
-
-
     }
 }

@@ -17,6 +17,13 @@ namespace RPSLS
         {
             playerOne = new Human();
             gesturesList = new List<string> {"Rock","Paper","Scissors","Lizard","Spock"};
+            
+            Gesture rock = new Gesture("Rock");
+            Gesture paper = new Gesture("Paper");
+            Gesture scissors = new Gesture("Scissors");
+            Gesture lizard = new Gesture("Lizard");
+            Gesture spock = new Gesture("Spock");
+
         }
 
         // Member Methods(CAN do)
