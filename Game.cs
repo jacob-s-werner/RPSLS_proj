@@ -122,7 +122,7 @@ namespace RPSLS
                 while (keepRunning)
                 {
                     Console.WriteLine($"Round {roundNumber}:");
-                    BattleRound(playerOne, playerTwo);
+                    BattleRound(playerOne, playerTwo, roundNumber);
 
                     if (roundNumber >= 3 && playerTwo.score != playerOne.score)
                     {
@@ -150,13 +150,15 @@ namespace RPSLS
             }
 
         }
-        public void BattleRound(Player player1, Player player2)
+        public void BattleRound(Player player1, Player player2, int roundNumber)
         {
             int winningOption;
             string playerOneChoice, playerTwoChoice;
             
             playerOneChoice = player1.ChooseGesture(gesturesList);
             Console.Clear();
+            
+            Console.WriteLine($"Round {roundNumber}");
             playerTwoChoice = player2.ChooseGesture(gesturesList);
             winningOption = CompareGestures(playerOneChoice, playerTwoChoice);
 
