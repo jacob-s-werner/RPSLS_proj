@@ -91,12 +91,12 @@ namespace RPSLS
 
             if (winningOption == 1)
             {
-                Console.WriteLine($"{player1.name} has won the round with {playerOneChoice}");
+                Console.WriteLine($"{player1.name} has won the round with {playerOneChoice}!\n");
                 player1.score++;
             }
             else if (winningOption == 2)
             {
-                Console.WriteLine($"{player2.name} has won the round with {playerOneChoice}");
+                Console.WriteLine($"{player2.name} has won the round with {playerOneChoice}!\n");
                 player2.score++;
             }
         }
@@ -106,7 +106,7 @@ namespace RPSLS
 
             if (player1Gesture == player2Gesture)
             {
-                Console.WriteLine($"Both tied with {player1Gesture}!");
+                Console.WriteLine($"Both tied with {player1Gesture}!\n");
                 return winningOption = 0;
             }
             else if(player1Gesture == "Rock" && player2Gesture == "Scissors")
