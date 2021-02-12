@@ -61,6 +61,7 @@ namespace RPSLS
             Human playerTwo = new Human();
             bool keepRunning = true;
             int roundNumber = 0;
+            string userResponse;
 
             Console.WriteLine("----------Player vs. Player Mode----------");
             Console.WriteLine("Player One:");
@@ -71,26 +72,36 @@ namespace RPSLS
 
             while (keepRunning)
             {
-                Console.WriteLine($"Round {roundNumber}:");
-                BattleRound(playerOne, playerTwo);
-                
-                if (roundNumber >= 3 && playerTwo.score != playerOne.score)
+
+                while (keepRunning)
                 {
-                    break;
+                    Console.WriteLine($"Round {roundNumber}:");
+                    BattleRound(playerOne, playerTwo);
+
+                    if (roundNumber >= 3 && playerTwo.score != playerOne.score)
+                    {
+                        break;
+                    }
+                    roundNumber++;
                 }
-                roundNumber++;
-            }
 
-            if (playerOne.score > playerTwo.score)
-            {
-                Console.WriteLine($"\n {playerOne.name} has won the game!");
-            }
-            else
-            {
-                Console.WriteLine($"\n {playerTwo.name} has won the game!");
-            }
+                if (playerOne.score > playerTwo.score)
+                {
+                    Console.WriteLine($"\n {playerOne.name} has won the game!");
+                }
+                else
+                {
+                    Console.WriteLine($"\n {playerTwo.name} has won the game!");
+                }
 
+                Console.WriteLine("Would you like a rematch? Y/N");
+                userResponse = Console.ReadLine();
 
+                if (userResponse.ToUpper() != "Y" || userResponse.ToUpper() != "YES")
+                {
+                    keepRunning = false;
+                }
+            }
 
         }
         public void BattleRound(Player player1, Player player2)
