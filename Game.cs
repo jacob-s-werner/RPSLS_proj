@@ -20,7 +20,7 @@ namespace RPSLS
         }
 
         // Member Methods(CAN do)
-        public void RunGame()
+        public void StartGame()
         {
             bool keepRunningMenu = true;
             string userInput;
@@ -59,55 +59,18 @@ namespace RPSLS
         public void PlayerVsAI()
         {
             AI playerTwo = new AI();
-            bool keepRunning = true;
-            int roundNumber = 1;
-            string userResponse;
-
+            
             Console.WriteLine("----------Player vs. AI Mode----------");
             Console.WriteLine("Player One:");
             playerOne.SetName();
             Console.WriteLine("");
-
-            while (keepRunning)
-            {
-
-                while (keepRunning)
-                {
-                    Console.WriteLine($"Round {roundNumber}:");
-                    BattleRound(playerOne, playerTwo, roundNumber);
-
-                    if (roundNumber >= 3 && playerTwo.score != playerOne.score)
-                    {
-                        break;
-                    }
-                    roundNumber++;
-                }
-
-                if (playerOne.score > playerTwo.score)
-                {
-                    Console.WriteLine($"\n{playerOne.name} has won the game!");
-                }
-                else
-                {
-                    Console.WriteLine($"\n{playerTwo.name} has won the game!");
-                }
-
-                Console.WriteLine("Would you like a rematch? Y/N");
-                userResponse = Console.ReadLine();
-
-                if (userResponse.ToUpper() != "Y" || userResponse.ToUpper() != "YES")
-                {
-                    keepRunning = false;
-                }
-            }
+            
+            RunGameMode(playerOne, playerTwo);
 
         }
         public void PlayerVsPlayer()
         {
             Human playerTwo = new Human();
-            bool keepRunning = true;
-            int roundNumber = 1;
-            string userResponse;
 
             Console.WriteLine("----------Player vs. Player Mode----------");
             Console.WriteLine("Player One:");
@@ -116,38 +79,7 @@ namespace RPSLS
             playerTwo.SetName();
             Console.WriteLine("");
 
-            while (keepRunning)
-            {
-
-                while (keepRunning)
-                {
-                    Console.WriteLine($"Round {roundNumber}:");
-                    BattleRound(playerOne, playerTwo, roundNumber);
-
-                    if (roundNumber >= 3 && playerTwo.score != playerOne.score)
-                    {
-                        break;
-                    }
-                    roundNumber++;
-                }
-
-                if (playerOne.score > playerTwo.score)
-                {
-                    Console.WriteLine($"\n{playerOne.name} has won the game!");
-                }
-                else
-                {
-                    Console.WriteLine($"\n{playerTwo.name} has won the game!");
-                }
-
-                Console.WriteLine("Would you like a rematch? Y/N");
-                userResponse = Console.ReadLine();
-
-                if (userResponse.ToUpper() != "Y" || userResponse.ToUpper() != "YES")
-                {
-                    keepRunning = false;
-                }
-            }
+            RunGameMode(playerOne, playerTwo);
 
         }
         public void BattleRound(Player player1, Player player2, int roundNumber)
@@ -287,6 +219,55 @@ namespace RPSLS
                 return winningOption = 0;
             }
         }
+        public void RunGameMode(Player playerOne, Player playerTwo)
+        {
+            bool keepRunning = true;
+            int roundNumber = 1;
+            string userResponse;
+
+            while (keepRunning)
+            {
+
+                while (keepRunning)
+                {
+                    Console.WriteLine($"Round {roundNumber}:");
+                    BattleRound(playerOne, playerTwo, roundNumber);
+
+                    if (roundNumber >= 3 && playerTwo.score != playerOne.score)
+                    {
+                        break;
+                    }
+                    roundNumber++;
+                }
+
+                if (playerOne.score > playerTwo.score)
+                {
+                    Console.WriteLine($"\n{playerOne.name} has won the game!");
+                }
+                else
+                {
+                    Console.WriteLine($"\n{playerTwo.name} has won the game!");
+                }
+
+                Console.WriteLine("Would you like a rematch? Y/N");
+                userResponse = Console.ReadLine();
+
+                if (userResponse.ToUpper() != "Y" && userResponse.ToUpper() != "YES")
+                {
+                    keepRunning = false;
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         //public void DisplayWinner(Player player)
         //{
         //    Console.WriteLine($"{player.name}");
