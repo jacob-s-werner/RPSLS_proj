@@ -24,6 +24,30 @@ namespace RPSLS
             Gesture lizard = new Gesture("Lizard");
             Gesture spock = new Gesture("Spock");
 
+            rock.beatsList.Add(scissors);
+            rock.beatsList.Add(lizard);
+            rock.losesToList.Add(paper);
+            rock.losesToList.Add(spock);
+
+            paper.beatsList.Add(rock);
+            paper.beatsList.Add(spock);
+            paper.losesToList.Add(scissors);
+            paper.losesToList.Add(lizard);
+
+            scissors.beatsList.Add(paper);
+            scissors.beatsList.Add(lizard);
+            scissors.losesToList.Add(rock);
+            scissors.losesToList.Add(spock);
+
+            lizard.beatsList.Add(paper);
+            lizard.beatsList.Add(spock);
+            lizard.losesToList.Add(rock);
+            lizard.losesToList.Add(scissors);
+
+            spock.beatsList.Add(rock);
+            spock.beatsList.Add(scissors);
+            spock.losesToList.Add(paper);
+            spock.losesToList.Add(lizard);
         }
 
         // Member Methods(CAN do)
