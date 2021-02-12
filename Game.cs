@@ -10,19 +10,22 @@ namespace RPSLS
     {
         // Member Variables (HAS a)
         Human playerOne;
-        List<string> gesturesList;
+        List<string> gesturesNameList;
+        List<Gesture> gesturesList;
 
         // Constructor
         public Game()
         {
             playerOne = new Human();
-            gesturesList = new List<string> {"Rock","Paper","Scissors","Lizard","Spock"};
+            gesturesNameList = new List<string> { "Rock","Paper","Scissors","Lizard","Spock" };
             
+
             Gesture rock = new Gesture("Rock");
             Gesture paper = new Gesture("Paper");
             Gesture scissors = new Gesture("Scissors");
             Gesture lizard = new Gesture("Lizard");
             Gesture spock = new Gesture("Spock");
+            gesturesList = new List<Gesture> { rock, paper, scissors, lizard, spock };
 
             rock.beatsList.Add(scissors);
             rock.beatsList.Add(lizard);
@@ -117,11 +120,11 @@ namespace RPSLS
         {
             int winningOption;
             
-            player1.gestureChoice = player1.ChooseGesture(gesturesList);
+            player1.gestureChoice = player1.ChooseGesture(gesturesNameList);
             Console.Clear();
             
             Console.WriteLine($"Round {roundNumber}");
-            player2.gestureChoice = player2.ChooseGesture(gesturesList);
+            player2.gestureChoice = player2.ChooseGesture(gesturesNameList);
             winningOption = CompareGestures(player1.gestureChoice, player2.gestureChoice);
 
             if (winningOption == 1)
@@ -288,15 +291,13 @@ namespace RPSLS
                 }
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        public void CompareGestures2(string playerOneGesture, string playerTwoGesture)
+        {
+            if (playerOneGesture == playerTwoGesture)
+            {
+
+            }
+        }
         
         //public void DisplayWinner(Player player)
         //{
