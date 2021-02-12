@@ -60,7 +60,7 @@ namespace RPSLS
         {
             AI playerTwo = new AI();
             bool keepRunning = true;
-            int roundNumber = 0;
+            int roundNumber = 1;
             string userResponse;
 
             Console.WriteLine("----------Player vs. AI Mode----------");
@@ -106,7 +106,7 @@ namespace RPSLS
         {
             Human playerTwo = new Human();
             bool keepRunning = true;
-            int roundNumber = 0;
+            int roundNumber = 1;
             string userResponse;
 
             Console.WriteLine("----------Player vs. Player Mode----------");
