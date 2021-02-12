@@ -14,7 +14,7 @@ namespace RPSLS
         // Constructor
         public AI()
         {
-
+            name = "ComputerAI";
         }
 
         // Member Methods(CAN do)
