@@ -11,12 +11,31 @@ namespace RPSLS
         // Member Variables (HAS a)
         public string name, gestureChoice;
         public int score;
+        
+        public List<string> gesturesNameList;
+        public List<Gesture> gesturesList;
         // Constructor
 
         public Player()
         {
             name = null;
             score = 0;
+            
+            gesturesNameList = new List<string> { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+
+            Gesture rock = new Rock();
+            Gesture paper = new Paper();
+            Gesture scissors = new Scissors();
+            Gesture lizard = new Lizard();
+            Gesture spock = new Spock();
+
+            gesturesList = new List<Gesture> { rock, paper, scissors, lizard, spock };
+
+            AddToBeatsList(rock, scissors, lizard);
+            AddToBeatsList(paper, rock, spock);
+            AddToBeatsList(scissors, paper, lizard);
+            AddToBeatsList(lizard, paper, spock);
+            AddToBeatsList(spock, rock, scissors);
         }
         // Member Methods(CAN do)
         public virtual string ChooseGesture(List<string> gesturesList)
@@ -43,6 +62,11 @@ namespace RPSLS
                 Console.WriteLine("Invalid option, try again.\n");
             }
             return null;
+        }
+        public virtual void AddToBeatsList(Gesture gestureThatBeats, Gesture getsBeaten1, Gesture getsBeaten2)
+        {
+            gestureThatBeats.beatsList.Add(getsBeaten1);
+            gestureThatBeats.beatsList.Add(getsBeaten2);
         }
     }
 }

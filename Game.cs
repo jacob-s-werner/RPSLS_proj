@@ -10,28 +10,13 @@ namespace RPSLS
     {
         // Member Variables (HAS a)
         Human playerOne;
-        List<string> gesturesNameList;
-        List<Gesture> gesturesList;
+        
 
         // Constructor
         public Game()
         {
             playerOne = new Human();
-            gesturesNameList = new List<string> { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
-
-            Gesture rock = new Rock();
-            Gesture paper = new Paper();
-            Gesture scissors = new Scissors();
-            Gesture lizard = new Lizard();
-            Gesture spock = new Spock();
-
-            gesturesList = new List<Gesture> { rock, paper, scissors, lizard, spock };
-
-            AddToBeatsList(rock, scissors, lizard);
-            AddToBeatsList(paper, rock, spock);
-            AddToBeatsList(scissors, paper, lizard);
-            AddToBeatsList(lizard, paper, spock);
-            AddToBeatsList(spock, rock, scissors);
+            
         }
 
         // Member Methods(CAN do)
@@ -99,11 +84,11 @@ namespace RPSLS
         {
             int winningOption;
             
-            player1.gestureChoice = player1.ChooseGesture(gesturesNameList);
+            player1.gestureChoice = player1.ChooseGesture(player1.gesturesNameList);
             Console.Clear();
             
             Console.WriteLine($"Round {roundNumber}");
-            player2.gestureChoice = player2.ChooseGesture(gesturesNameList);
+            player2.gestureChoice = player2.ChooseGesture(player2.gesturesNameList);
             winningOption = CompareGestures(player1.gestureChoice, player2.gestureChoice);
 
             if (winningOption == 1)
@@ -162,7 +147,7 @@ namespace RPSLS
             Gesture playerOnePick = null, playerTwoPick = null; //gets rid of error if not included in gesturesList
             int winningOption = 0;
 
-            foreach (Gesture gesture in gesturesList)
+            foreach (Gesture gesture in playerOne.gesturesList)
             {
                 if (gesture.name == playerOneGesture)
                 {
@@ -213,10 +198,6 @@ namespace RPSLS
                 }
             }
         }
-        public virtual void AddToBeatsList(Gesture gestureThatBeats, Gesture getsBeaten1, Gesture getsBeaten2)
-        {
-            gestureThatBeats.beatsList.Add(getsBeaten1);
-            gestureThatBeats.beatsList.Add(getsBeaten2);
-        }
+        
     }
 }
