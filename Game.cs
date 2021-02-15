@@ -52,14 +52,24 @@ namespace RPSLS
             spock.losesToList.Add(paper);
             spock.losesToList.Add(lizard);
 
+            scissors.image[0] = "                         ";
+            scissors.image[1] = "                         ";
+            scissors.image[2] = @"  ,----,___   _________  ";
+            scissors.image[3] = @" ( <__> )__\ /_________\ ";
+            scissors.image[4] = @"   ---- ___{X}__________ ";
+            scissors.image[5] = @" ( <__> )__/ \_________/ ";
+            scissors.image[6] = @"  '----'                 ";
+            scissors.image[7] = "                         ";
+            scissors.image[8] = "                         ";
+
             lizard.image[0] = "                         ";
-            lizard.image[1] = @"     ______              ";                    
-            lizard.image[2] = @"    ( {()} )________     ";          
-            lizard.image[3] = @"    (-------______'')__, ";          
-            lizard.image[4] = @"    (-------________)  ' ";            
-            lizard.image[5] = @"   (  -----)             ";               
-            lizard.image[6] = @"  (       )              ";                
-            lizard.image[7] = @" (_______)               ";                                 
+            lizard.image[1] = @"     ______              "; 
+            lizard.image[2] = @"    ( {()} )________     ";
+            lizard.image[3] = @"    (-------______'')__, "; 
+            lizard.image[4] = @"    (-------________)  ' "; 
+            lizard.image[5] = @"   (  -----)             "; 
+            lizard.image[6] = @"  (       )              "; 
+            lizard.image[7] = @" (_______)               "; 
             lizard.image[8] = "                         ";
             
             spock.image[0] = "                ";
