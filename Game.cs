@@ -197,7 +197,7 @@ namespace RPSLS
         }
         public void DrawGestures(Gesture winningGesture, Gesture losingGesture, bool tied)
         {
-            for (int i = 0; i < winningGesture.image.Length - 1; i++)
+            for (int i = 0; i < winningGesture.image.Length; i++)
             {
                 if (i == 4 && tied == true)
                 {
