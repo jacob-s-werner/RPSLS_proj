@@ -11,7 +11,7 @@ namespace RPSLS
         public string name;
         public List<Gesture> losesToList;
         public List<Gesture> beatsList;
-
+        public string[] image;
         public Gesture(string name)
         {
             this.name = name;
