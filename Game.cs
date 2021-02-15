@@ -19,93 +19,19 @@ namespace RPSLS
             playerOne = new Human();
             gesturesNameList = new List<string> { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
 
+            Gesture rock = new Rock();
+            Gesture paper = new Paper();
+            Gesture scissors = new Scissors();
+            Gesture lizard = new Lizard();
+            Gesture spock = new Spock();
 
-            Gesture rock = new Gesture("Rock");
-            Gesture paper = new Gesture("Paper");
-            Gesture scissors = new Gesture("Scissors");
-            Gesture lizard = new Gesture("Lizard");
-            Gesture spock = new Gesture("Spock");
             gesturesList = new List<Gesture> { rock, paper, scissors, lizard, spock };
 
-            rock.beatsList.Add(scissors);
-            rock.beatsList.Add(lizard);
-            rock.losesToList.Add(paper);
-            rock.losesToList.Add(spock);
-
-            paper.beatsList.Add(rock);
-            paper.beatsList.Add(spock);
-            paper.losesToList.Add(scissors);
-            paper.losesToList.Add(lizard);
-
-            scissors.beatsList.Add(paper);
-            scissors.beatsList.Add(lizard);
-            scissors.losesToList.Add(rock);
-            scissors.losesToList.Add(spock);
-
-            lizard.beatsList.Add(paper);
-            lizard.beatsList.Add(spock);
-            lizard.losesToList.Add(rock);
-            lizard.losesToList.Add(scissors);
-
-            spock.beatsList.Add(rock);
-            spock.beatsList.Add(scissors);
-            spock.losesToList.Add(paper);
-            spock.losesToList.Add(lizard);
-
-            rock.image[0] = @"   \\\\                ";
-            rock.image[1] = @"    ,----,,----,,      "; // @ symbol makes it so it doesnt produce 'unrecognized escape error' due to slashes
-            rock.image[2] = @"   {  '       '  '}    "; // for the life of me I can't make a simple rock from ASCII, looks more like a cloud
-            rock.image[3] = @"  {  '  ^   *'    ''}  ";
-            rock.image[4] = @"   {   /  ' \   '   }  ";
-            rock.image[5] = @"  { ' /    ' >  '  *}  ";
-            rock.image[6] = @"   {     *  /'    ,,}  ";
-            rock.image[7] = @"    '--------'---'     ";
-            rock.image[8] = "                       ";
-
-            paper.image[0] = "                  ";
-            paper.image[1] = @"   _____________  ";
-            paper.image[2] = @"  | ~~~         | ";
-            paper.image[3] = @"  | ~~~~~~~~~~~ | ";
-            paper.image[4] = @"  | ~~~~~~~~~~~ | ";
-            paper.image[5] = @"  | ~~~~~~~~~~  | ";
-            paper.image[6] = @"  | ~~~~~~~~~~~ | ";
-            paper.image[7] = @"  | -JW         | ";
-            paper.image[8] = @"  '-------------' ";
-
-            scissors.image[0] = "                         ";
-            scissors.image[1] = "                         ";
-            scissors.image[2] = @"  ,----,___   _________  ";
-            scissors.image[3] = @" ( <__> )__\ /_________\ ";
-            scissors.image[4] = @"   ---- ___{X}__________ ";
-            scissors.image[5] = @" ( <__> )__/ \_________/ ";
-            scissors.image[6] = @"  '----'                 ";
-            scissors.image[7] = "                         ";
-            scissors.image[8] = "                         ";
-
-            lizard.image[0] = "                         ";
-            lizard.image[1] = @"     ______              "; 
-            lizard.image[2] = @"    ( {()} )________     ";
-            lizard.image[3] = @"    (-------______'')__, "; 
-            lizard.image[4] = @"    (-------________)  ' "; 
-            lizard.image[5] = @"   (  -----)             "; 
-            lizard.image[6] = @"  (       )              "; 
-            lizard.image[7] = @" (_______)               "; 
-            lizard.image[8] = "                         ";
-            
-            spock.image[0] = "                ";
-            spock.image[1] = @"    /\/\  /\    ";
-            spock.image[2] = @"    | | | | |/\ ";
-            spock.image[3] = @"    | | | | | | ";
-            spock.image[4] = @" /\ |   \_/ | | ";
-            spock.image[5] = @" \ \|         / ";
-            spock.image[6] = @"  \ \        /  ";
-            spock.image[7] = @"   \________/   ";
-            spock.image[8] = "                ";
-
-
-
-
-
+            AddToBeatsList(rock, scissors, lizard);
+            AddToBeatsList(paper, rock, spock);
+            AddToBeatsList(scissors, paper, lizard);
+            AddToBeatsList(lizard, paper, spock);
+            AddToBeatsList(spock, rock, scissors);
         }
 
         // Member Methods(CAN do)
@@ -286,6 +212,11 @@ namespace RPSLS
                     Console.WriteLine(winningGesture.image[i] + "        " + losingGesture.image[i]);
                 }
             }
+        }
+        public virtual void AddToBeatsList(Gesture gestureThatBeats, Gesture getsBeaten1, Gesture getsBeaten2)
+        {
+            gestureThatBeats.beatsList.Add(getsBeaten1);
+            gestureThatBeats.beatsList.Add(getsBeaten2);
         }
     }
 }

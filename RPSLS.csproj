@@ -47,9 +47,14 @@
     <Compile Include="Game.cs" />
     <Compile Include="Gesture.cs" />
     <Compile Include="Human.cs" />
+    <Compile Include="Lizard.cs" />
+    <Compile Include="Paper.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rock.cs" />
+    <Compile Include="Scissors.cs" />
+    <Compile Include="Spock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

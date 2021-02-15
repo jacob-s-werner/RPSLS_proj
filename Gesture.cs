@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace RPSLS
 {
-    public class Gesture
+    public class Gesture // Am I ready to be a parent?
     {
         public string name;
-        public List<Gesture> losesToList;
         public List<Gesture> beatsList;
         public string[] image;
-        public Gesture(string name)
+        public Gesture()
         {
-            this.name = name;
-
-            losesToList = new List<Gesture>();
             beatsList = new List<Gesture>();
             image = new string[9];
         }
     }
+
+    
 }
