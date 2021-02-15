@@ -18,6 +18,7 @@ namespace RPSLS
 
             losesToList = new List<Gesture>();
             beatsList = new List<Gesture>();
+            image = new string[9];
         }
     }
 }

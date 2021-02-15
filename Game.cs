@@ -251,26 +251,33 @@ namespace RPSLS
 
             if (playerOnePick == playerTwoPick)
             {
+                DrawGestures(playerOnePick,playerTwoPick, true);
                 Console.WriteLine($"Both tied with {playerOnePick.name}!");
             }
             else if (playerOnePick.beatsList.Contains(playerTwoPick))
             {
+                DrawGestures(playerOnePick, playerTwoPick, false);
                 Console.WriteLine($"{playerOnePick.name} beats {playerTwoPick.name}!");
                 return winningOption = 1;
             }
             else if (playerTwoPick.beatsList.Contains(playerOnePick))
             {
+                DrawGestures(playerTwoPick, playerOnePick, false);
                 Console.WriteLine($"{playerTwoPick.name} beats {playerOnePick.name}!");
                 return winningOption = 2;
             }
 
             return winningOption;
         }
-        public void DrawGestures(Gesture winningGesture, Gesture losingGesture)
+        public void DrawGestures(Gesture winningGesture, Gesture losingGesture, bool tied)
         {
             for (int i = 0; i < winningGesture.image.Length - 1; i++)
             {
-                if (i == 4)
+                if (i == 4 && tied == true)
+                {
+                    Console.WriteLine(winningGesture.image[i] + "  TIED  " + losingGesture.image[i]);
+                }
+                else if (i == 4 && tied == false)
                 {
                     Console.WriteLine(winningGesture.image[i] + "  BEATS " + losingGesture.image[i]);
                 }
