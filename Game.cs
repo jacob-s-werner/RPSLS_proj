@@ -52,6 +52,16 @@ namespace RPSLS
             spock.losesToList.Add(paper);
             spock.losesToList.Add(lizard);
 
+            paper.image[0] = "                  ";
+            paper.image[1] = @"   _____________  "; // @ symbol makes it so it doesnt produce 'unrecognized escape error'
+            paper.image[2] = @"  | ~~~         | ";
+            paper.image[3] = @"  | ~~~~~~~~~~~ | ";
+            paper.image[4] = @"  | ~~~~~~~~~~~ | ";
+            paper.image[5] = @"  | ~~~~~~~~~~  | ";
+            paper.image[6] = @"  | ~~~~~~~~~~~ | ";
+            paper.image[7] = @"  | -JW         | ";
+            paper.image[8] = @"  '-------------' ";
+
             scissors.image[0] = "                         ";
             scissors.image[1] = "                         ";
             scissors.image[2] = @"  ,----,___   _________  ";
