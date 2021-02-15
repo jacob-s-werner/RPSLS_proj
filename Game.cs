@@ -10,15 +10,11 @@ namespace RPSLS
     {
         // Member Variables (HAS a)
         Human playerOne;
-        
-
         // Constructor
         public Game()
         {
             playerOne = new Human();
-            
         }
-
         // Member Methods(CAN do)
         public void StartGame()
         {
@@ -28,14 +24,12 @@ namespace RPSLS
             while (keepRunningMenu)
             {
                 Console.WriteLine("Prepare to play Rock Paper Scissors Lizard Spock!\n");
-
-                Console.WriteLine("It's like Rock Paper Scissors with the following rules:");
-                Console.WriteLine("Rock crushes Scissors \nScissors cuts Paper \nPaper covers Rock \nRock crushes Lizard" +
-                    "Lizard poisons Spock \nSpock smashes Scissors \nScissors decapitates Lizard \nLizard eats Paper \n" +
-                    "Paper disproves Spock \nSpock vaporizes Rock \n Play for the best out of three rounds\n");
-
+                DisplayRules();
+                
                 Console.WriteLine("Enter the number for which game mode you want to play:");
-                Console.WriteLine("1: Player vs. AI \n2: Player vs. Player \n0: Exit Game \n");
+                Console.WriteLine("1: Player vs. AI \n" +
+                                  "2: Player vs. Player \n" +
+                                  "0: Exit Game \n");
                 userInput = Console.ReadLine();
 
                 if (userInput == "1")
@@ -87,6 +81,7 @@ namespace RPSLS
             player1.gestureChoice = player1.ChooseGesture(player1.gesturesNameList);
             Console.Clear();
             
+            DisplayRules();
             Console.WriteLine($"Round {roundNumber}");
             player2.gestureChoice = player2.ChooseGesture(player2.gesturesNameList);
             winningOption = CompareGestures(player1.gestureChoice, player2.gestureChoice);
@@ -108,6 +103,7 @@ namespace RPSLS
             int roundNumber;
             string userResponse;
 
+            DisplayRules();
             while (keepRunning)
             {
                 roundNumber = 1;
@@ -197,6 +193,21 @@ namespace RPSLS
                     Console.WriteLine(winningGesture.image[i] + "        " + losingGesture.image[i]);
                 }
             }
+        }
+        public void DisplayRules()
+        {
+            Console.WriteLine("It's like Rock Paper Scissors with the following rules:");
+            Console.WriteLine("             Rock crushes Scissors, \n" +
+                              "             Scissors cuts Paper, \n" +
+                              "             Paper covers Rock, \n" +
+                              "             Rock crushes Lizard, \n" +
+                              "             Lizard poisons Spock, \n" +
+                              "             Spock smashes Scissors, \n" +
+                              "             Scissors decapitates Lizard, \n" +
+                              "             Lizard eats Paper, \n" +
+                              "             Paper disproves Spock, \n" +
+                              "             Spock vaporizes Rock, \n\n" +
+                              "      Play for the best out of three rounds. \n");
         }
         
     }
