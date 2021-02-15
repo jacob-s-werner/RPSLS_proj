@@ -52,8 +52,18 @@ namespace RPSLS
             spock.losesToList.Add(paper);
             spock.losesToList.Add(lizard);
 
+            rock.image[0] = @"   \\\\                ";
+            rock.image[1] = @"    ,----,,----,,      "; // @ symbol makes it so it doesnt produce 'unrecognized escape error' due to slashes
+            rock.image[2] = @"   {  '       '  '}    "; // for the life of me I can't make a simple rock from ASCII
+            rock.image[3] = @"  {  '  ^   *'    ''}  ";
+            rock.image[4] = @"   {   /  ' \   '   }  ";
+            rock.image[5] = @"  { ' /    ' >  '  *}  ";
+            rock.image[6] = @"   {     *  /'    ,,}  ";
+            rock.image[7] = @"    '--------'---'     ";
+            rock.image[8] = "                       ";
+
             paper.image[0] = "                  ";
-            paper.image[1] = @"   _____________  "; // @ symbol makes it so it doesnt produce 'unrecognized escape error'
+            paper.image[1] = @"   _____________  ";
             paper.image[2] = @"  | ~~~         | ";
             paper.image[3] = @"  | ~~~~~~~~~~~ | ";
             paper.image[4] = @"  | ~~~~~~~~~~~ | ";
@@ -83,7 +93,7 @@ namespace RPSLS
             lizard.image[8] = "                         ";
             
             spock.image[0] = "                ";
-            spock.image[1] = @"    /\/\  /\    "; // @ symbol makes it so it doesnt produce 'unrecognized escape error'
+            spock.image[1] = @"    /\/\  /\    ";
             spock.image[2] = @"    | | | | |/\ ";
             spock.image[3] = @"    | | | | | | ";
             spock.image[4] = @" /\ |   \_/ | | ";
