@@ -17,8 +17,8 @@ namespace RPSLS
         public Game()
         {
             playerOne = new Human();
-            gesturesNameList = new List<string> { "Rock","Paper","Scissors","Lizard","Spock" };
-            
+            gesturesNameList = new List<string> { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+
 
             Gesture rock = new Gesture("Rock");
             Gesture paper = new Gesture("Paper");
@@ -51,6 +51,18 @@ namespace RPSLS
             spock.beatsList.Add(scissors);
             spock.losesToList.Add(paper);
             spock.losesToList.Add(lizard);
+
+            spock.image[1] = @"    /\/\  /\    "; // @ symbol makes it so it doesnt produce 'unrecognized escape error'
+            spock.image[2] = @"    | | | | |/\ ";
+            spock.image[3] = @"    | | | | | | ";
+            spock.image[4] = @" /\ |   \_/ | | ";
+            spock.image[5] = @" \ \|         / ";
+            spock.image[6] = @"  \ \        /  ";
+            spock.image[7] = @"   \________/   ";
+
+
+
+
         }
 
         // Member Methods(CAN do)
