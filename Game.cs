@@ -54,7 +54,7 @@ namespace RPSLS
 
             rock.image[0] = @"   \\\\                ";
             rock.image[1] = @"    ,----,,----,,      "; // @ symbol makes it so it doesnt produce 'unrecognized escape error' due to slashes
-            rock.image[2] = @"   {  '       '  '}    "; // for the life of me I can't make a simple rock from ASCII
+            rock.image[2] = @"   {  '       '  '}    "; // for the life of me I can't make a simple rock from ASCII, looks more like a cloud
             rock.image[3] = @"  {  '  ^   *'    ''}  ";
             rock.image[4] = @"   {   /  ' \   '   }  ";
             rock.image[5] = @"  { ' /    ' >  '  *}  ";
@@ -265,6 +265,20 @@ namespace RPSLS
             }
 
             return winningOption;
+        }
+        public void DrawGestures(Gesture winningGesture, Gesture losingGesture)
+        {
+            for (int i = 0; i < winningGesture.image.Length - 1; i++)
+            {
+                if (i == 4)
+                {
+                    Console.WriteLine(winningGesture.image[i] + "  BEATS " + losingGesture.image[i]);
+                }
+                else
+                {
+                    Console.WriteLine(winningGesture.image[i] + "        " + losingGesture.image[i]);
+                }
+            }
         }
     }
 }
