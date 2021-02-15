@@ -42,10 +42,7 @@ namespace RPSLS
                 }
                 Console.WriteLine("Invalid option, try again.\n");
             }
-
             return null;
-
         }
-        
     }
 }

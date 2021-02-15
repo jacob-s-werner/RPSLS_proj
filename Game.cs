@@ -66,7 +66,7 @@ namespace RPSLS
                 Console.WriteLine("It's like Rock Paper Scissors with the following rules:");
                 Console.WriteLine("Rock crushes Scissors \nScissors cuts Paper \nPaper covers Rock \nRock crushes Lizard" +
                     "Lizard poisons Spock \nSpock smashes Scissors \nScissors decapitates Lizard \nLizard eats Paper \n" +
-                    "Paper disproves Spock \nSpock vaporizes Rock \n");
+                    "Paper disproves Spock \nSpock vaporizes Rock \n Play for the best out of three rounds\n");
 
                 Console.WriteLine("Enter the number for which game mode you want to play:");
                 Console.WriteLine("1: Player vs. AI \n2: Player vs. Player \n0: Exit Game \n");
@@ -100,7 +100,6 @@ namespace RPSLS
             Console.WriteLine("");
             
             RunGameMode(playerOne, playerTwo);
-
         }
         public void PlayerVsPlayer()
         {
@@ -114,7 +113,6 @@ namespace RPSLS
             Console.WriteLine("");
 
             RunGameMode(playerOne, playerTwo);
-
         }
         public void BattleRound(Player player1, Player player2, int roundNumber)
         {
@@ -194,7 +192,6 @@ namespace RPSLS
                 {
                     playerTwoPick = gesture;
                 }        
-
             }
 
             if (playerOnePick == playerTwoPick)
@@ -214,124 +211,5 @@ namespace RPSLS
 
             return winningOption;
         }
-        //public int CompareGestures(string player1Gesture, string player2Gesture)
-        //{
-        //    int winningOption = 0;
-
-        //    if (player1Gesture == player2Gesture)
-        //    {
-        //        Console.WriteLine($"Both tied with {player1Gesture}!\n");
-        //        return winningOption = 0;
-        //    }
-        //    else if(player1Gesture == "Rock" && player2Gesture == "Scissors")
-        //    {
-        //        Console.WriteLine("Rock crushes Scissors");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Scissors" && player2Gesture == "Paper")
-        //    {
-        //        Console.WriteLine("Scissors cuts Paper");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Paper" && player2Gesture == "Rock")
-        //    {
-        //        Console.WriteLine("Paper covers Rock");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Rock" && player2Gesture == "Lizard")
-        //    {
-        //        Console.WriteLine("Rock crushes Lizard");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Lizard" && player2Gesture == "Spock")
-        //    {
-        //        Console.WriteLine("Lizard poisons Spock");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Spock" && player2Gesture == "Scissors")
-        //    {
-        //        Console.WriteLine("Spock smashes Scissors");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Scissors" && player2Gesture == "Lizard")
-        //    {
-        //        Console.WriteLine("Scissors decapitates Lizard");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Lizard" && player2Gesture == "Paper")
-        //    {
-        //        Console.WriteLine("Lizard eats Paper");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Paper" && player2Gesture == "Spock")
-        //    {
-        //        Console.WriteLine("Paper disproves Spock");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player1Gesture == "Spock" && player2Gesture == "Rock")
-        //    {
-        //        Console.WriteLine("Spock vaporizes Rock");
-        //        return winningOption = 1;
-        //    }
-        //    else if (player2Gesture == "Rock" && player1Gesture == "Scissors")
-        //    {
-        //        Console.WriteLine("Rock crushes Scissors");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Scissors" && player1Gesture == "Paper")
-        //    {
-        //        Console.WriteLine("Scissors cuts Paper");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Paper" && player1Gesture == "Rock")
-        //    {
-        //        Console.WriteLine("Paper covers Rock");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Rock" && player1Gesture == "Lizard")
-        //    {
-        //        Console.WriteLine("Rock crushes Lizard");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Lizard" && player1Gesture == "Spock")
-        //    {
-        //        Console.WriteLine("Lizard poisons Spock");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Spock" && player1Gesture == "Scissors")
-        //    {
-        //        Console.WriteLine("Spock smashes Scissors");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Scissors" && player1Gesture == "Lizard")
-        //    {
-        //        Console.WriteLine("Scissors decapitates Lizard");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Lizard" && player1Gesture == "Paper")
-        //    {
-        //        Console.WriteLine("Lizard eats Paper");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Paper" && player1Gesture == "Spock")
-        //    {
-        //        Console.WriteLine("Paper disproves Spock");
-        //        return winningOption = 2;
-        //    }
-        //    else if (player2Gesture == "Spock" && player1Gesture == "Rock")
-        //    {
-        //        Console.WriteLine("Spock vaporizes Rock");
-        //        return winningOption = 2;
-        //    }
-
-        //    Console.WriteLine("Error, invalid Gesture");
-        //    return winningOption;
-
-        //}
-
-        //public void DisplayWinner(Player player)
-        //{
-        //    Console.WriteLine($"{player.name}");
-        //}
     }
 }

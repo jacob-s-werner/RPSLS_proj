@@ -26,6 +26,5 @@ namespace RPSLS
             gestureChosen = gesturesList[random.Next(gesturesList.Count)];
             return gestureChosen;
         }
-
     }
 }
